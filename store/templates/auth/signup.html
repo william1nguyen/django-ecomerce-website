@@ -1,0 +1,21 @@
+{% extends 'auth/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="login-page">
+    <div class="form">
+        <form id="signup-form" class="register-form">
+            <!-- {% csrf_token %} -->
+            <input type="text" placeholder="username" name="username" required/>
+            <input type="text" placeholder="email address" name="email" required/>
+            <input type="password" placeholder="password" name="password" required/>
+            <input type="password" placeholder="password confirm" name="password_confirm" required/>
+            <button id="signup">create</button>
+            <p class="message">Already registered? <a href="{% url 'view_login' %}">Sign In</a></p>
+        </form>
+    </div>
+</div>
+
+<script src="{% static 'js/auth/signup.js' %}"></script>
+
+{% endblock content %}
