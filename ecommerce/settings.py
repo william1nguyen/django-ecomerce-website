@@ -27,6 +27,11 @@ SECRET_KEY = "django-insecure-wt91r_tcl-^#wi4!pr=t10wg7x-89ylgshiwzdu#u#+mczqrjy
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "https://eccommerce-app-01.chilly-male.wonderfulshed.xyz",
+]
 
 # Application definition
 
