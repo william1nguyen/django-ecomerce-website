@@ -31,7 +31,7 @@ CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "https://eccommerce-app-01.chilly-male.wonderfulshed.xyz",
-    "https://ecom-nux1.onrender.com/",
+    "https://ecom-nux1.onrender.com",
 ]
 
 # Application definition
