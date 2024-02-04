@@ -31,6 +31,7 @@ def validate_user(username, email, password, password_confirm):
         return False
     return True
 
+@csrf_protect
 def create_user(request):
 
     data = json.loads(request.body)
@@ -46,7 +47,7 @@ def create_user(request):
     else:
         return HttpResponse(400)
     
-
+@csrf_protect
 def login(request):
     
     data = json.loads(request.body)
@@ -60,7 +61,8 @@ def login(request):
         return JsonResponse({'Access Token': token}, status=200)
     else:
         return JsonResponse({'error': 'Invalid credentials'}, status=400)
-    
+
+@csrf_protect   
 def logout(request):
 
     user = request.user
