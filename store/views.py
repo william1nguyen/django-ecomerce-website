@@ -41,7 +41,7 @@ def create_user(request):
     password_confirm = data['userData']['password_confirm']
 
     if validate_user(username, email, password, password_confirm):
-        user = User.objects.create_superuser(username, email, password)
+        user = User.objects.create_user(username, email, password)
         Customer.objects.create(user=user, name=username, email=email)
         return HttpResponse(201)
     else:
