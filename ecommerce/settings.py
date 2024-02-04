@@ -33,6 +33,9 @@ CORS_ALLOWED_ORIGINS = [
     "https://eccommerce-app-01.chilly-male.wonderfulshed.xyz",
     "https://ecom-nux1.onrender.com",
 ]
+CSRF_TRUSTED_ORIGINS = [
+    "https://ecom-nux1.onrender.com",
+]
 
 # Application definition
 
