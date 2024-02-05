@@ -187,3 +187,20 @@ def processOrder(request):
 
     return JsonResponse('Payment submitted...', safe=False)
 
+def viewItem(request, product_id):
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created = Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
+    else: 
+        items = []
+        order = {
+            'get_cart_total': 0,
+            'get_cart_items': 0
+        }
+        cartItems = order['get_cart_items']
+
+    product = Product.objects.get(id=product_id)
+    context = {'product': product, 'items': items, 'order': order, 'cartItems': cartItems}
+    return render(request, 'store/view.html', context)

@@ -1,0 +1,36 @@
+{% extends 'store/main.html' %} {% load static %} {% block content %}
+
+<div class="row" style="padding-top: 80px;">
+    <div class="col-lg-6">
+        <img src="{{product.image.url}}" alt="item-image" class="img-thumbnail" width="500" height="500" />
+    </div>
+    <div class="col-lg-6">
+        <div>
+            <div>
+                <h2>{{product.name}}</h2>
+            </div>
+            {% if product.description %}
+            <hr />
+            <div>
+                <h5>Description</h5>
+                <p>{{product.description}}</p>
+            </div>
+            {% endif %}
+            <hr />
+            <p style="color: green;">{{product.status}}</p>
+            <div>
+                <h3>${{product.price}}</h5>
+            </div>
+            <br>
+            <button
+                data-product="{{product.id}}"
+                data-action="add"
+                class="btn btn-outline-secondary add-btn update-cart"
+            >
+                Add to Cart
+            </button>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
