@@ -1,5 +1,5 @@
 # Ecompera
-![Uploading Screenshot 2024-04-22 at 22.03.43.png…]()
+![](demo/main_page.png)
 
 ## Introduction
 
